@@ -1,4 +1,4 @@
-package eu.tsachev.random;
+package eu.tsachev.objects;
 
 import java.math.BigInteger;
 import java.util.Scanner;
