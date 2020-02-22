@@ -1,4 +1,4 @@
-package eu.tsachev.objects;
+package eu.tsachev.Song;
 
 import java.util.ArrayList;
 import java.util.List;

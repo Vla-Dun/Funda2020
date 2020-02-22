@@ -1,4 +1,4 @@
-package eu.tsachev.objects;
+package eu.tsachev.Song;
 public class Song {
         private String typeList;
         private String name;
