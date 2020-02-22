@@ -1,4 +1,4 @@
-package eu.tsachev.objects;
+package eu.tsachev.Students;
 
 
 public class Student {

@@ -1,10 +1,10 @@
-package eu.tsachev.objects;
+package eu.tsachev.Students;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class objectStudents {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class objectStudents {
         ) {
 
             if (student.getHomeTown().equals(filterCity)) {
-                System.out.printf("%s %s is %d years old.%n", student.getFirstName(), student.getLastName(), student.getYearsOld());
+                System.out.printf("%s %s is %d years old%n", student.getFirstName(), student.getLastName(), student.getYearsOld());
             }
 
         }
