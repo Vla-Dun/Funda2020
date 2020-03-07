@@ -1,3 +1,5 @@
+package midExamDecember;
+
 import java.util.Scanner;
 
 public class blackflag {

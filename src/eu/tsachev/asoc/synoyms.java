@@ -13,16 +13,19 @@ public class synoyms {
 
         Map<String, ArrayList<String>> words = new LinkedHashMap<>();
 
-        for (int i = 0; i < n ; i++) {
+        for (int i = 0; i < n; i++) {
             String word = scan.nextLine();
             String synonym = scan.nextLine();
 
-            words.put(word, new ArrayList<>()); //initlialize LIST in key -> value
+            words.putIfAbsent(word, new ArrayList<>()); //initlialize LIST in key -> value
 
             words.get(word).add(synonym); //adds entry to list for key location.
 
 
+        }
 
+        for (Map.Entry<String, ArrayList<String>> entry : words.entrySet()) {
+            System.out.printf("%s - %s%n", entry.getKey(), String.join(", ", entry.getValue()));
         }
 
 

@@ -21,6 +21,10 @@ public class countRealNumbers {
             counts.put(num, counts.get(num) + 1);
         }
 
+
+
+
+
         for (Map.Entry<Double, Integer> entry : counts.entrySet()) {
             DecimalFormat df = new DecimalFormat("#.#######");
             System.out.printf("%s -> %d%n", df.format(entry.getKey()), entry.getValue());
