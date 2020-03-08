@@ -9,7 +9,7 @@ public class courses {
         Map<String, ArrayList<String>> coruses = new HashMap<>();
         Map<String, Integer> registered = new LinkedHashMap<>();
 
-        String[] input = scan.nextLine().split(":");
+        String[] input = scan.nextLine().split("\\s+:");
         while (!"end".equals(input[0])) {
 
             coruses.putIfAbsent(input[0], new ArrayList<>());
@@ -21,7 +21,7 @@ public class courses {
                 registered.put(input[0], registered.get(input[0]) + 1);
             }
 
-            input = scan.nextLine().split(":");
+            input = scan.nextLine().split("\\s+:");
 
         }//while
 
@@ -34,7 +34,7 @@ public class courses {
         for (Map.Entry<String, Integer> entry : result2.entrySet()) {
 
 
-            System.out.println(String.format("%s : %s", entry.getKey(), entry.getValue()));
+            System.out.println(String.format("%s: %s", entry.getKey(), entry.getValue()));
 
 
             for (Map.Entry<String, ArrayList<String>> entry2 : coruses.entrySet()) {
