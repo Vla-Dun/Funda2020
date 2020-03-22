@@ -1,7 +1,6 @@
 package eu.tsachev.regex.Homework;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,24 +10,34 @@ public class furnitureRegex {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
-        List<String> itemsList = new LinkedList<>();
+
+        ArrayList<String> itemsList = new ArrayList<>();
+        double finalPrice = 0.0;
+        String regex = ">>(?<name>\\w+)<<(?<price>[0-9]+\\.?[0-9]*)!(?<quanity>[0-9]+)";
+
         while (!"Purchase".equals(input)) {
-            String regex = ">>(?<name>[A-Z]+[a-z]*)<<(?<price>[0-9]+.*)!(?<quanity>\\d)";
-            String inputWhile = scan.nextLine();
 
             Pattern pattern = Pattern.compile(regex);
-            Matcher items = pattern.matcher(inputWhile);
+            Matcher items = pattern.matcher(input);
 
 
-            String imte = items.group("name");
-            double price = Double.parseDouble(items.group("price"));
-            int quanity = Integer.parseInt(items.group("name"));
+            if (items.find()) {
 
-            itemsList.add(items.group());
+                String imte = items.group("name");
+                double price = Double.parseDouble(items.group("price"));
+                int quanity = Integer.parseInt(items.group("quanity"));
 
+                itemsList.add(imte);
+                finalPrice += price * quanity;
+            }
+
+            input = scan.nextLine();
         }//while
+        System.out.println("Bought furniture:");
 
-        System.out.println(String.join(", ", itemsList));
+        itemsList.forEach(f -> System.out.println(f));
+        System.out.printf("Total money spend: %.2f", finalPrice);
+
     }
 }
 
