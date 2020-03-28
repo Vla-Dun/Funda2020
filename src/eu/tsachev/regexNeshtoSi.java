@@ -15,18 +15,18 @@ public class regexNeshtoSi {
         while (!"end of shift".equals(line)) {
             Matcher matcher = patterns.matcher(line);
             if (matcher.find()) {
-                String name = matcher.group("name"); // взимаме имет на клиента от наименованата група
-                String product = matcher.group("product"); // взимаме името на продукта от наименованата група
-                int count = Integer.parseInt(matcher.group("count")); // взимаме броя на покупките и ги парсваме
-                double price = Double.parseDouble(matcher.group("price")); // взимаме цената на продукта и го парсваме
-                double totalPrice = count * price; // изчисляваме общата цена за продукта
-                income += totalPrice; // добавяме цената към печалбата на бара
+                String name = matcher.group("name");
+                String product = matcher.group("product");
+                int count = Integer.parseInt(matcher.group("count"));
+                double price = Double.parseDouble(matcher.group("price"));
+                double totalPrice = count * price;
+                income += totalPrice; //
 
-                System.out.printf("%s: %s - %.2f%n", name, product, totalPrice); // принтираме информация за текущия продукт
+                System.out.printf("%s: %s - %.2f%n", name, product, totalPrice);
             }
             line = scan.nextLine();
         }
 
-        System.out.printf("Total income: %.2f", income); // принтираме печалбата на бара
+        System.out.printf("Total income: %.2f", income);
     }
 }
